@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery API Request Example</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Make an AJAX request using $.ajax()
+      $.ajax({
+        url: 'https://api.example.com/data', // Replace with the actual API endpoint
+        method: 'GET', // HTTP request method
+        dataType: 'json', // Data type expected from the server
+        success: function(data) {
+          // Handle the successful response here
+          console.log('API Response:', data);
+        },
+        error: function(error) {
+          // Handle errors here
+          console.error('Error fetching API:', error);
+        }
+      });
+
+      // Alternatively, you can use $.get() for a simple GET request
+      // $.get('https://api.example.com/data', function(data) {
+      //   console.log('API Response:', data);
+      // });
+
+      // Or use $.getJSON() for a JSON-specific GET request
+      // $.getJSON('https://api.example.com/data', function(data) {
+      //   console.log('API Response:', data);
+      // });
+    });
+  </script>
+</head>
+<body>
+    <div>
+        <h1>API Request Example</h1>
+        <p>This is a simple example of making an API request using jQuery.</p>
+      </div>
+</body>
+</html>
